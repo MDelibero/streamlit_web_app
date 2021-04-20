@@ -1,7 +1,2 @@
-pandas
-numpy
 os
 streamlit
-datetime
-plotly
-seaborn
