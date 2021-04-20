@@ -1,9 +1,7 @@
 pandas
 numpy
-base64
 os
 streamlit
 datetime
-fbprophet 
 plotly
 seaborn
