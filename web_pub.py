@@ -1,11 +1,8 @@
 import pandas as pd
 import numpy as np
-import base64
 import os
 import streamlit as st
 from datetime import date
-from fbprophet import Prophet
-from fbprophet.plot import plot_plotly
 from plotly import graph_objs as go
 import seaborn as sns
 
@@ -25,11 +22,6 @@ report = pivot[(pivot.Country == selected_country) & (pivot.Sector== selected_se
 
 st.subheader("Report per country/sector")
 st.write(report)
-
-csv = report.to_csv(index=False)
-b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as &lt;file_name&gt;.csv)'
-st.markdown(href, unsafe_allow_html=True)
 
 def plot_raw_data():
 	fig = go.Figure()
